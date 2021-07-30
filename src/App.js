@@ -1,17 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from "./Components/Header/index";
 import Editor from "./Components/Editor/index";
 import Input from "./Components/Input/index";
 import Output from "./Components/Output/index";
+import axios from 'axios';
 import './App.css';
 
 function App() {
+
+  const [code, setCode] = useState('');
+  const [language, setLanguage] = useState('');
+  const [input, setInput] = useState('');
+  const [output, setOutput] = useState({});
+
+  const handleCode = data => {
+    setCode(data);
+  }
+
+  const handleLanguage = data => {
+    setLanguage(data);
+  }
+
+  const handleInput = data => {
+    setInput(data);
+  }
+
+  async function handleSubmit() {
+    const response = await axios.post('http://localhost:5000/run', {language: language, code: code, input: input});
+    const data = response.json();
+  }
+
   return (
     <>  
         <Header />
         <Editor />
-        <Input />
-        <Output />
+        <div className="flex">
+          <Input />
+          <Output />
+        </div>
     </>
   );
 }
