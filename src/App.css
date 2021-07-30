@@ -1,5 +1,34 @@
-.flex {
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.editor {
     display: flex;
+}
+
+.code-section {
+    width: 50%;
+}
+
+.output-section {
+    margin-top: 30px;
+    margin-left: 50px;
+    width: 50%;
+}
+
+.light {
+    background-color: white;
+    color: black;
+}
+
+.content {
+    padding: 50px;
+}
+
+.dark {
+    background-color: #0a0c10;
+    color: #eceef2;
 }
 
 @media (max-width: 550px) {

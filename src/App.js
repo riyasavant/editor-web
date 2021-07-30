@@ -12,6 +12,7 @@ function App() {
   const [language, setLanguage] = useState('');
   const [input, setInput] = useState('');
   const [output, setOutput] = useState({});
+  const [lightTheme, setTheme] = useState(true);
 
   const handleCode = data => {
     setCode(data);
@@ -25,20 +26,28 @@ function App() {
     setInput(data);
   }
 
+  const changeTheme = () => {
+    setTheme(!lightTheme);
+  }
+
   async function handleSubmit() {
     const response = await axios.post('http://localhost:5000/run', {language: language, code: code, input: input});
     const data = response.json();
   }
 
   return (
-    <>  
-        <Header />
-        <Editor />
-        <div className="flex">
-          <Input />
-          <Output />
+    <div className={`content ${lightTheme ? 'light' : 'dark'}`}>  
+        <Header lightTheme={lightTheme} changeTheme={changeTheme}/>
+        <div className="editor">
+          <div className="code-section">
+            <Editor code={code} handleCode={handleCode} language="js" lightTheme={lightTheme}/>
+          </div>
+          <div className="output-section">
+            <Input input={input} handleInput={handleInput} lightTheme={lightTheme}/>
+            <Output lightTheme={lightTheme}/>
+          </div>
         </div>
-    </>
+    </div>
   );
 }
 
