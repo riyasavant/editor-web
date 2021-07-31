@@ -13,13 +13,14 @@ function App() {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState({});
   const [lightTheme, setTheme] = useState(true);
+  const [background, setBackground] = useState('');
 
   const handleCode = data => {
     setCode(data);
   }
 
   const handleLanguage = data => {
-    setLanguage(data);
+    setLanguage(data.target.value);
   }
 
   const handleInput = data => {
@@ -30,14 +31,18 @@ function App() {
     setTheme(!lightTheme);
   }
 
+  const changeBackground = data => {
+    setBackground(data.target.value);
+  }
+
   async function handleSubmit() {
     const response = await axios.post('http://localhost:5000/run', {language: language, code: code, input: input});
     const data = response.json();
   }
 
   return (
-    <div className={`content ${lightTheme ? 'light' : 'dark'}`}>  
-        <Header lightTheme={lightTheme} changeTheme={changeTheme} changeLanguage={handleLanguage}/>
+    <div className={`content ${lightTheme ? 'light' : 'dark'} 'background'`}>  
+        <Header lightTheme={lightTheme} changeTheme={changeTheme} changeLanguage={handleLanguage} changeBackground={changeBackground}/>
         <div className="editor">
           <div className="code-section">
             <Editor code={code} handleCode={handleCode} language="js" lightTheme={lightTheme}/>
