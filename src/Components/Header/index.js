@@ -3,7 +3,7 @@ import dark from "../../assets/moon.png";
 import light from "../../assets/sun.png";
 import "./index.css";
 
-export default function Header({lightTheme, changeTheme, language, changeLanguage, handleReset, handleSubmit, changeBackground}) {
+export default function Header({lightTheme, changeTheme, language, changeLanguage, handleReset, handleSubmit, background, changeBackground}) {
 
     function handleChange(e) {
         changeLanguage(e.target.value);
@@ -31,10 +31,10 @@ export default function Header({lightTheme, changeTheme, language, changeLanguag
                     <select 
                         onChange={(e) => changeBackground(e.target.value)} 
                         style={{cursor: 'pointer', padding: '10px', border: 'none', background: 'rgb(300, 200, 100)', marginRight: '10px'}}
+                        defaultValue={background}
                     >
                         <option value="bg1">BG1</option>
                         <option value="bg">BG</option>
-                        <option value="bg">BG</option> 
                     </select>
                 </div>
                 <div onClick={handleReset} style={{padding: '10px', border: 'none', background: '#D14D5D', marginRight: '10px', color: 'white', cursor: 'pointer'}}>Reset</div>

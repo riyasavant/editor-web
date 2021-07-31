@@ -36,7 +36,7 @@ function App() {
   }
 
   const changeBackground = data => {
-    setBackground(data.target.value);
+    setBackground(data);
   }
 
   async function handleSubmit() {
@@ -47,8 +47,8 @@ function App() {
   }
 
   return (
-    <div className={`content background ${lightTheme ? 'light' : 'dark'}`}>  
-        <Header lightTheme={lightTheme} changeTheme={changeTheme} changeBackground={changeBackground} language={language} changeLanguage={handleLanguage} handleSubmit={handleSubmit} handleReset={handleReset}/>
+    <div className={`content ${lightTheme ? 'light' : 'dark'} ${background === 'bg1' ? 'bg1' : 'bg'}`}>  
+        <Header lightTheme={lightTheme} changeTheme={changeTheme} changeBackground={changeBackground} language={language} changeLanguage={handleLanguage} handleSubmit={handleSubmit} handleReset={handleReset} background={background}/>
         <div className="editor">
           <div className="code-section">
             <Editor code={code} handleCode={handleCode} language={language} lightTheme={lightTheme}/>
