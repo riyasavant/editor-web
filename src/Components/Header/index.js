@@ -29,7 +29,7 @@ export default function Header({lightTheme, changeTheme, language, changeLanguag
                 </div>
                 <div>
                     <select 
-                        onChange={changeBackground} 
+                        onChange={(e) => changeBackground(e.target.value)} 
                         style={{cursor: 'pointer', padding: '10px', border: 'none', background: 'rgb(300, 200, 100)', marginRight: '10px'}}
                     >
                         <option value="bg1">BG1</option>
