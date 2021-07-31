@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className={`content ${lightTheme ? 'light' : 'dark'}`}>  
-        <Header lightTheme={lightTheme} changeTheme={changeTheme}/>
+        <Header lightTheme={lightTheme} changeTheme={changeTheme} changeLanguage={handleLanguage}/>
         <div className="editor">
           <div className="code-section">
             <Editor code={code} handleCode={handleCode} language="js" lightTheme={lightTheme}/>
