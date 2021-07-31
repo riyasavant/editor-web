@@ -1,14 +1,18 @@
 .editor-styles {
-    box-shadow: 4px 4px 8px #888888;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    min-height: 550px;
+  box-shadow: 4px 4px 8px #888888;
+  margin-top: 30px;
+  margin-bottom: 48px;
+  min-height: 700px;
 }
 
 .light-bg {
-    background: #f0f8ff;
+  background: #f4f5fc;
 }
 
 .dark-bg {
-    background: #14171f;
+  background: #14171f;
+}
+
+.container__editor textarea {
+  outline: 0;
 }

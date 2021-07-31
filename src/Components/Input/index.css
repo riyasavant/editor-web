@@ -1,11 +1,17 @@
 .input-styles {
-    min-height: 200px;
+  min-height: 340px;
+  border-radius: 20px;
+  margin-top: 30px;
 }
 
 .light-ip {
-    background: #f5f5f5;
+  background: #f4f5fc;
 }
 
 .dark-ip {
-    background: #14171f;
+  background: #14171f;
+}
+
+.container__editor textarea {
+  outline: 0;
 }
