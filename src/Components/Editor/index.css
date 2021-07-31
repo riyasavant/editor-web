@@ -1,0 +1,14 @@
+.editor-styles {
+    box-shadow: 4px 4px 8px #888888;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    min-height: 550px;
+}
+
+.light-bg {
+    background: #f0f8ff;
+}
+
+.dark-bg {
+    background: #14171f;
+}

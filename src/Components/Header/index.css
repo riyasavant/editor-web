@@ -1,0 +1,12 @@
+
+.run {
+  background-color: var(--blue);
+  color: white;
+  padding: 8px 22px;
+  border: 1px solid var(--blue);
+  box-shadow: 1px 1px 4px 1px #248ccc86;
+}
+
+.flex {
+    display: flex;
+}
