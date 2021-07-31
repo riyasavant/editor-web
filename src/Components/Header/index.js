@@ -3,12 +3,11 @@ import dark from "../../assets/moon.png";
 import light from "../../assets/sun.png";
 import "./index.css";
 
-export default function Header({lightTheme, changeTheme, language, changeLanguage, handleReset, handleSubmit}) {
+export default function Header({lightTheme, changeTheme, language, changeLanguage, handleReset, handleSubmit, changeBackground}) {
 
     function handleChange(e) {
         changeLanguage(e.target.value);
     }
-
     return(
         <div style={{display: 'flex', justifyContent: 'space-between'}}>
             <div className="flex">
@@ -27,7 +26,17 @@ export default function Header({lightTheme, changeTheme, language, changeLanguag
                         <option value="c">C</option>
                         <option value="java">Java</option>  
                     </select>
-                </div> 
+                </div>
+                <div>
+                    <select 
+                        onChange={changeBackground} 
+                        style={{cursor: 'pointer', padding: '10px', border: 'none', background: 'rgb(300, 200, 100)', marginRight: '10px'}}
+                    >
+                        <option value="bg1">BG1</option>
+                        <option value="bg">BG</option>
+                        <option value="bg">BG</option> 
+                    </select>
+                </div>
                 <div onClick={handleReset} style={{padding: '10px', border: 'none', background: '#D14D5D', marginRight: '10px', color: 'white', cursor: 'pointer'}}>Reset</div>
                 <div onClick={handleSubmit} style={{cursor: 'pointer', padding: '10px', border: 'none', background: '#2CCACA'}}>Run</div>
             </div> 
