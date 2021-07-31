@@ -1,3 +1,20 @@
-.flex {
-    display: flex;
+.header-inner {
+  display: flex;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 550px) {
+  .header-flex {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .header-inner {
+    flex-direction: row;
+    padding-top: 10px;
+  }
 }

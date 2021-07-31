@@ -1,7 +1,6 @@
 .output-styles {
-  height: 320px;
   margin-top: 30px;
-  min-height: 200px;
+  min-height: 320px;
   border-radius: 20px;
 }
 
@@ -11,4 +10,11 @@
 
 .dark-op {
   background: #14171f;
+}
+
+@media (max-width: 900px) {
+  .output-styles {
+    margin-top: 20px;
+    min-height: 200px;
+  }
 }

@@ -15,3 +15,10 @@
 .container__editor textarea {
   outline: 0;
 }
+
+@media (max-width: 900px) {
+  .input-styles {
+    min-height: 200px;
+    margin-top: 0px;
+  }
+}

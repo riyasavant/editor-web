@@ -12,8 +12,8 @@ export default function Header({
   changeColor,
 }) {
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <div className="flex">
+    <div className="header-flex">
+      <div className="header-inner">
         <div style={{ fontSize: "30px", marginRight: "20px" }}>Code Editor</div>
         <div
           onClick={changeTheme}
@@ -27,7 +27,7 @@ export default function Header({
           />
         </div>
       </div>
-      <div className="flex">
+      <div className="header-inner">
         <div>
           <select
             onChange={(e) => changeLanguage(e.target.value)}
