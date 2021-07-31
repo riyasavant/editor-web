@@ -20,7 +20,7 @@ function App() {
   }
 
   const handleLanguage = data => {
-    setLanguage(data.target.value);
+    setLanguage(data);
   }
 
   const handleInput = data => {
@@ -42,8 +42,7 @@ function App() {
   async function handleSubmit() {
     try {
       const response = await axios.post('http://localhost:5000/run', {language: language, code: code, input: input});
-      const data = response.json();
-      console.log(data);
+      console.log(response.data)
     } catch(e) {console.log(e);}
   }
 
