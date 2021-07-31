@@ -3,7 +3,7 @@ import dark from "../../assets/moon.png";
 import light from "../../assets/sun.png";
 import "./index.css";
 
-export default function Header({lightTheme, changeTheme, handleLanguage}) {
+export default function Header({lightTheme, changeTheme, handleLanguage, changeBackground}) {
     return(
         <div style={{display: 'flex', justifyContent: 'space-between'}}>
             <div className="flex">
@@ -19,6 +19,19 @@ export default function Header({lightTheme, changeTheme, handleLanguage}) {
                         <option value="CPP">CPP</option>
                         <option value="JAVA">JAVA</option>
                         <option value="C">C</option>
+                    </select>
+                </div>    
+
+
+                <div>
+                    <select 
+                        onChange={changeBackground} 
+                        style={{cursor: 'pointer', padding: '5px', border: 'none', background: 'rgb(300, 200, 100)', marginLeft: '20px'}}
+                    >
+                        <option value="bg1">BG1</option>
+                        <option value="bg">BG</option>
+                        <option value="bg">BG</option>
+                        
                     </select>
                 </div>    
 
