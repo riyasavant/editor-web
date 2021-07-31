@@ -55,7 +55,6 @@ app.post('/run', function(req, res){
   for (let i in param[language].shell){
     runCode(param[language].shell[i],res)
     console.log(param[language].shell[i])
-
   }
 
 })
@@ -79,17 +78,21 @@ const runCode = (arg,res) => {
   exec(arg, (error, stdout, stderr) => {
     if (error) {
       console.log(`error: ${error.message}`)
+      let jsonData = JSON.stringify(error);
+      res.json(jsonData);
       return
     }
     if (stderr) {
       console.log(`stderr: ${stderr}`)
+      let jsonData = JSON.stringify(stderr);
+      res.json(jsonData);
       return
     }
     if (stdout!==""){
       let jsonData = JSON.stringify(stdout);
       res.json(jsonData);
     }
-    return stdout
+    return
   })
 
 }
