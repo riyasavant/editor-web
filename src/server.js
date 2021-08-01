@@ -76,7 +76,7 @@ const runCode = (arg, res) => {
       console.log("error: ", error.message);
       let jsonData = {
         error: true,
-        errorMessage: "Error occured in your code",
+        errorMessage: "Error occured",
         result: null,
       };
       res.json(jsonData);
@@ -86,7 +86,7 @@ const runCode = (arg, res) => {
       console.log("stderr: ", stderr);
       let jsonData = {
         error: true,
-        errorMessage: "Error occured in your code",
+        errorMessage: "Error occured",
         result: null,
       };
       res.json(jsonData);
